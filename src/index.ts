@@ -93,6 +93,7 @@ async function run() {
         projectId,
         target,
         firebaseToolsVersion,
+        deployfunctions: !!getInput("deployFunctions")
       });
       if (deployment.status === "error") {
         throw Error((deployment as ErrorResult).error);
